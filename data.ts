@@ -253,10 +253,6 @@ export const siteData: SiteData =  {
        {
         label: "Email ↗",
         href: "mailto:ahmed.messaad@outlook.com"
-      },
-       {
-        label: "Specmob ↗",
-        href: "#"
       }
     ]
   }
