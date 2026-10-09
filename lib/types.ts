@@ -39,6 +39,7 @@ export type SiteData = {
   projects: {
     image: string;
     imageAlt: string;
+    imageCaption?: string;
     insight: string;
     facts: { label: string; value: string }[];
     stats: { value: string; label: string }[];

@@ -299,8 +299,8 @@ export const site: SiteData = {
         "I compared 12 architectures, including ResNet variants, using stratified cross-validation, and reached 90-99% accuracy depending on the domain.",
         "The work was presented at ICSTEM 2023 in Istanbul and received the Best Presentation Award."
       ],
-      "image": "",
-      "imageAlt": "",
+      "image": "/work/daily-network.png",
+      "imageAlt": "Diagram of a convolutional neural network with three convolutional blocks, a fully connected layer and a softmax output",
       "stats": [
         {
           "value": "12",
@@ -325,7 +325,8 @@ export const site: SiteData = {
           "value": "90–99%"
         }
       ],
-      "insight": "Research becomes more interesting when it has to become a product."
+      "insight": "Research becomes more interesting when it has to become a product.",
+      "imageCaption": "Illustrative CNN architecture."
     },
     {
       "slug": "healthcare-cost-prediction",

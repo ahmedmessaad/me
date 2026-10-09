@@ -4,7 +4,7 @@ export type Work = {
   slug: string; name: string; kind: string; group: string; description: string;
   stack: string[]; stats: { value: string; label: string }[]; link: { label: string; href: string };
   writeup: string[]; seoTitle: string; seoDescription: string;
-  facts: { label: string; value: string }[]; insight: string; image: string; imageAlt: string;
+  facts: { label: string; value: string }[]; insight: string; image: string; imageAlt: string; imageCaption: string;
 };
 
 export function allWork(): Work[] {
@@ -12,12 +12,12 @@ export function allWork(): Work[] {
   const head: Work = {
     slug: f.slug, name: f.title, kind: f.label, group: "Clinical AI", description: f.description,
     stack: f.chips, stats: f.stats, link: f.link, writeup: f.writeup, seoTitle: f.seoTitle, seoDescription: f.seoDescription,
-    facts: f.facts, insight: f.insight, image: "", imageAlt: "",
+    facts: f.facts, insight: f.insight, image: "", imageAlt: "", imageCaption: "",
   };
   const rest = projects.map<Work>((p) => ({
     slug: p.slug, name: p.name, kind: p.kind, group: p.group, description: p.description,
     stack: p.stack, stats: p.stats, link: p.link, writeup: p.writeup, seoTitle: p.seoTitle, seoDescription: p.seoDescription,
-    facts: p.facts, insight: p.insight, image: p.image, imageAlt: p.imageAlt,
+    facts: p.facts, insight: p.insight, image: p.image, imageAlt: p.imageAlt, imageCaption: p.imageCaption ?? "",
   }));
   return [head, ...rest];
 }

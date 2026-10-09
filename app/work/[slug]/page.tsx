@@ -51,7 +51,7 @@ export default async function Case({ params }: Props) {
         <h1>{w.name}</h1>
         <p className="lead">{w.description}</p>
         {w.slug === site.featured.slug && <div className="figure"><Detect /></div>}
-        {w.image && (<figure className="figure"><img src={w.image} alt={w.imageAlt} loading="lazy" /></figure>)}
+        {w.image && (<figure className="figure"><img src={w.image} alt={w.imageAlt} loading="lazy" />{w.imageCaption && <figcaption>{w.imageCaption}</figcaption>}</figure>)}
         <div className="nums">
           {w.stats.map((s) => (<div key={s.label}><CountUp value={s.value} /><span>{s.label}</span></div>))}
         </div>
