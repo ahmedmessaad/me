@@ -7,7 +7,6 @@ import { drawerGroups } from "@/lib/work";
 
 export default function Home() {
   const { meta, hero, featured, projects, more, publications, about, footer } = site;
-  const [first, ...rest] = meta.name.split(" ");
   const groups = drawerGroups();
   const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.result.split(" ")[0], href: `/work/${p.slug}` })),
     ...more.map((m) => ({ name: m.name, text: m.kind, tag: m.link.label, href: m.link.href }))];
@@ -18,7 +17,7 @@ export default function Home() {
       <main id="top">
         <section className="hero wrap">
           <small>{hero.eyebrow}</small>
-          <h1>{first}<br />{rest.join(" ")}</h1>
+          <h1>{hero.titleLines.map((l, i) => (<span key={l}>{l}{i < hero.titleLines.length - 1 && <br />}</span>))}</h1>
           <div className="lede">
             <p>{hero.lead}</p>
             <a href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
