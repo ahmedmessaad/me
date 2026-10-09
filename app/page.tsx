@@ -7,9 +7,9 @@ import { Emph, external } from "@/components/Emph";
 import { drawerGroups } from "@/lib/work";
 
 export default function Home() {
-  const { meta, hero, featured, projects, more, publications, about, footer } = site;
+  const { meta, hero, work, featured, projects, more, publications, about, footer } = site;
   const groups = drawerGroups();
-  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.result.split(" ")[0], href: `/work/${p.slug}` })),
+  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.stats[0]?.value ?? "Code", href: `/work/${p.slug}` })),
     ...more.map((m) => ({ name: m.name, text: m.kind, tag: m.link.label, href: m.link.href }))];
 
   return (
@@ -40,6 +40,7 @@ export default function Home() {
 
           <div className="list">
             <h2>Selected work</h2>
+            <p className="note">{work.note}</p>
             {all.map((p, i) => (
               <a className="row" key={p.name} href={p.href} {...(p.href.startsWith("/") ? {} : external(p.href))}>
                 <i>{String(i + 1).padStart(2, "0")}</i><h3>{p.name}</h3><em>{p.tag}</em><p>{p.text}</p>
@@ -56,7 +57,20 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="about" id="about"><p><Emph text={about.statement} /></p></div>
+          <div className="about" id="about">
+            <p><Emph text={about.statement} /></p>
+            <div className="about-grid">
+              <figure className="portrait">
+                <img src={about.photo} alt={about.photoAlt} width={900} height={918} loading="lazy" />
+              </figure>
+              <div className="about-body">
+                {about.paragraphs.map((t) => <p key={t}>{t}</p>)}
+                <dl className="facts">
+                  {about.facts.map((f) => (<div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>))}
+                </dl>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <Footer meta={meta} footer={footer} />

@@ -33,8 +33,15 @@ export type SiteData = {
     seoTitle: string;
     seoDescription: string;
     writeup: string[];
+    facts: { label: string; value: string }[];
+    insight: string;
   };
   projects: {
+    image: string;
+    imageAlt: string;
+    insight: string;
+    facts: { label: string; value: string }[];
+    stats: { value: string; label: string }[];
     slug: string;
     seoTitle: string;
     seoDescription: string;
@@ -68,6 +75,8 @@ export type SiteData = {
     statement: string;
     paragraphs: string[];
     facts: { label: string; value: string }[];
+    photo: string;
+    photoAlt: string;
   };
   footer: {
     blurb: string;
