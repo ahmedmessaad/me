@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { site } from "@/data/site";
 import Drawer from "@/components/Drawer";
+import CountUp from "@/components/CountUp";
 import Detect from "@/components/Detect";
 import Footer from "@/components/Footer";
 import { Emph, external } from "@/components/Emph";
@@ -14,7 +15,7 @@ export default function Home() {
 
   return (
     <>
-      <Drawer name={meta.name} groups={groups} />
+      <Drawer name={meta.name} groups={groups} menu={site.menu} />
       <main id="top">
         <section className="hero wrap">
           <small>{hero.eyebrow}</small>
@@ -32,7 +33,7 @@ export default function Home() {
             </div>
             <div className="pl-info">
             <div className="nums">
-              {featured.stats.map((s) => (<div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>))}
+              {featured.stats.map((s) => (<div key={s.label}><CountUp value={s.value} /><span>{s.label}</span></div>))}
             </div>
             <p className="cap"><span>{featured.description} <a href={`/work/${featured.slug}`} style={{ color: "var(--ink)", borderBottom: "1px solid" }}>Read the case study</a></span></p>
             </div>

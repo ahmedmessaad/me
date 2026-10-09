@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { SiteData } from "@/lib/types";
 import { SocialIcon } from "./Icons";
 import { external } from "./Emph";
@@ -33,7 +34,7 @@ export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer
           ))}
         </nav>
       </div>
-      <div className="art" aria-hidden="true">
+      <div className={`art${footer.cloudImage ? " has-photo" : ""}`} style={footer.cloudImage ? ({ "--cloud": `url(${footer.cloudImage})` } as CSSProperties) : undefined} aria-hidden="true">
         <span className="word">{footer.wordmark}</span>
       </div>
     </footer>

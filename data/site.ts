@@ -635,6 +635,30 @@ export const site: SiteData = {
         "label": "Email",
         "href": "mailto:ahmed.messaad@outlook.com"
       }
+    ],
+    "cloudImage": ""
+  },
+  "menu": {
+    "card": {
+      "label": "Featured",
+      "title": "HemaVision",
+      "text": "Blood analysis from 45 to 3 minutes. Featured on BBC 4Tech.",
+      "href": "/work/hemavision",
+      "image": "/work/hemavision-thumb.jpg"
+    },
+    "links": [
+      {
+        "label": "Resume",
+        "href": "/resume.pdf"
+      },
+      {
+        "label": "Email",
+        "href": "mailto:ahmed.messaad@outlook.com"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/RYANX9"
+      }
     ]
   }
 };

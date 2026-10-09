@@ -80,6 +80,6 @@ export async function commitData(data: SiteData) {
 export function isSiteData(v: unknown): v is SiteData {
   if (!v || typeof v !== "object") return false;
   const o = v as Record<string, unknown>;
-  const keys = ["meta", "hero", "work", "featured", "projects", "publications", "about", "footer"];
+  const keys = ["meta", "hero", "work", "featured", "projects", "publications", "about", "menu", "footer"];
   return keys.every((k) => k in o && o[k] !== null && typeof o[k] === "object");
 }

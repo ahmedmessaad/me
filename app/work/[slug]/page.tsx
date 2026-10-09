@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { site } from "@/data/site";
 import { allWork, drawerGroups } from "@/lib/work";
 import Drawer from "@/components/Drawer";
+import CountUp from "@/components/CountUp";
 import Footer from "@/components/Footer";
 import Detect from "@/components/Detect";
 import { external } from "@/components/Emph";
@@ -43,7 +44,7 @@ export default async function Case({ params }: Props) {
   };
   return (
     <>
-      <Drawer name={site.meta.name} groups={drawerGroups()} home="/" />
+      <Drawer name={site.meta.name} groups={drawerGroups()} home="/" menu={site.menu} />
       <main className="wrap case" id="top">
         <a className="back" href="/#work">All work</a>
         <p className="kind">{w.kind}</p>
@@ -52,7 +53,7 @@ export default async function Case({ params }: Props) {
         {w.slug === site.featured.slug && <div className="figure"><Detect /></div>}
         {w.image && (<figure className="figure"><img src={w.image} alt={w.imageAlt} loading="lazy" /></figure>)}
         <div className="nums">
-          {w.stats.map((s) => (<div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>))}
+          {w.stats.map((s) => (<div key={s.label}><CountUp value={s.value} /><span>{s.label}</span></div>))}
         </div>
         <dl className="facts">{w.facts.map((f) => (<div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>))}</dl>
         <div className="body">{w.writeup.map((p) => <p key={p}>{p}</p>)}</div>

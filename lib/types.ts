@@ -78,7 +78,12 @@ export type SiteData = {
     photo: string;
     photoAlt: string;
   };
+  menu: {
+    card: { label: string; title: string; text: string; href: string; image: string };
+    links: Link[];
+  };
   footer: {
+    cloudImage: string;
     blurb: string;
     wordmark: string;
     columns: { title: string; links: Link[] }[];
