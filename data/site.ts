@@ -10,7 +10,7 @@ export const site: SiteData = {
     "googleVerification": ""
   },
   "hero": {
-    "eyebrow": "Medical AI, computer vision and deep learning engineer",
+    "eyebrow": "PhD researcher and AI/ML engineer in medical imaging and computer vision",
     "titleLines": [
       "I build the model.",
       "Then I build",

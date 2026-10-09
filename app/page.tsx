@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { site } from "@/data/site";
 import Drawer from "@/components/Drawer";
 import Detect from "@/components/Detect";
@@ -17,7 +18,7 @@ export default function Home() {
       <main id="top">
         <section className="hero wrap">
           <small>{hero.eyebrow}</small>
-          <h1>{hero.titleLines.map((l, i) => (<span key={l}>{l}{i < hero.titleLines.length - 1 && <br />}</span>))}</h1>
+          <h1>{hero.titleLines.map((l, i) => (<span className="ln" key={l}><span style={{ "--i": i } as CSSProperties}>{l}</span></span>))}</h1>
           <div className="lede">
             <p>{hero.lead}</p>
             <a href={hero.primaryCta.href}>{hero.primaryCta.label}</a>

@@ -42,6 +42,7 @@ export default function Detect() {
         });
       }
     });
+    list.sort((a, b) => a.x - b.x);
     cells.current = list;
     base.current = c.getImageData(0, 0, W, H);
     return () => clearInterval(timer.current);
@@ -58,6 +59,12 @@ export default function Detect() {
       c.fillStyle = k.type === "WBC" ? "#131311" : "#fff";
       c.fillText(`${k.type} ${(0.93 + ((i * 37) % 7) / 100).toFixed(2)}`, k.x - k.r + 4, k.y - k.r - 4);
     });
+    if (n < cells.current.length) {
+      const x = (n / cells.current.length) * W;
+      const gr = c.createLinearGradient(x - 70, 0, x, 0);
+      gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(1, "rgba(255,255,255,.42)");
+      c.fillStyle = gr; c.fillRect(x - 70, 0, 70, H);
+    }
     setStatus(n >= cells.current.length ? `${cells.current.length} cells found in 0.04 s` : "detecting...");
   };
 
@@ -67,9 +74,9 @@ export default function Detect() {
     setOn(true);
     let n = 0;
     timer.current = window.setInterval(() => {
-      n += 2; draw(n);
+      n += 1; draw(n);
       if (n >= cells.current.length) clearInterval(timer.current);
-    }, 45);
+    }, 38);
   };
 
   return (
