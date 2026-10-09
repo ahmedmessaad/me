@@ -1,15 +1,42 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { DM_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { site } from "@/data/site";
 import "./globals.css";
 
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--f-serif" });
+const sans = Instrument_Sans({ subsets: ["latin"], variable: "--f-sans" });
+const mono = DM_Mono({ subsets: ["latin"], weight: "400", variable: "--f-mono" });
+
+const { meta } = site;
+
 export const metadata: Metadata = {
-  title: "Ahmed Messaad — PhD Researcher & AI/ML Engineer",
-  description: "Ahmed Messaad — PhD Researcher and AI/ML Engineer working across applied deep learning, medical AI, and intelligent systems."
+  metadataBase: new URL(meta.url),
+  title: meta.title,
+  description: meta.description,
+  alternates: { canonical: "/" },
+  openGraph: { title: meta.title, description: meta.description, url: meta.url, siteName: meta.name, type: "website" },
+  twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
+  verification: meta.googleVerification ? { google: meta.googleVerification } : undefined,
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><head>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet" />
-  </head><body>{children}</body></html>;
+export const viewport: Viewport = { viewportFit: "cover", themeColor: "#ebe7dd" };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: meta.name,
+    url: meta.url,
+    email: meta.email,
+    jobTitle: "PhD Researcher and AI/ML Engineer",
+    sameAs: site.footer.socials.filter((s) => s.type !== "email").map((s) => s.href),
+  };
+  return (
+    <html lang="en" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+      <body>
+        {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      </body>
+    </html>
+  );
 }
