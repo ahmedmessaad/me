@@ -637,7 +637,7 @@ export const site: SiteData = {
         "href": "mailto:ahmed.messaad@outlook.com"
       }
     ],
-    "cloudImage": ""
+    "cloudImage": "/clouds.jpg"
   },
   "menu": {
     "card": {
