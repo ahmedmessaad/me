@@ -25,13 +25,17 @@ export default function Home() {
           </div>
 
           <div className="plate" id="work">
+            <div className="pl-media">
             <div className="cap"><b>Project: {featured.title}</b><span>{featured.label.split(" · ").pop()}</span></div>
             <Detect />
             <div className="cap"><span>{featured.pipelineCaption}. Simulated here; tap to run.</span></div>
+            </div>
+            <div className="pl-info">
             <div className="nums">
               {featured.stats.map((s) => (<div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>))}
             </div>
             <p className="cap"><span>{featured.description} <a href={`/work/${featured.slug}`} style={{ color: "var(--ink)", borderBottom: "1px solid" }}>Read the case study</a></span></p>
+            </div>
           </div>
 
           <div className="list">

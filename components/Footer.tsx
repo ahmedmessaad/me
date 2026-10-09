@@ -1,6 +1,7 @@
 import type { SiteData } from "@/lib/types";
 import { SocialIcon } from "./Icons";
 import { external } from "./Emph";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer">) {
   return (
@@ -19,6 +20,7 @@ export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer
               </a>
             ))}
           </div>
+          <ThemeToggle />
         </div>
         <nav className="cols" aria-label="Footer">
           {footer.columns.map((c) => (
