@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata, Viewport } from "next";
 import { DM_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { site } from "@/data/site";
@@ -50,4 +49,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-```
+
