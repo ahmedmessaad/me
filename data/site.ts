@@ -581,7 +581,7 @@ export const site: SiteData = {
         "links": [
           {
             "label": "Selected work",
-            "href": "#work"
+            "href": "/work"
           },
           {
             "label": "Publications",

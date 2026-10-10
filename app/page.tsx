@@ -47,6 +47,7 @@ export default function Home() {
                 <i>{String(i + 1).padStart(2, "0")}</i><h3>{p.name}</h3><em>{p.tag}</em><p>{p.text}</p>
               </a>
             ))}
+            <a className="all" href="/work">All projects</a>
           </div>
 
           <div className="list" id="publications">

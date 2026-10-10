@@ -46,7 +46,7 @@ export default async function Case({ params }: Props) {
     <>
       <Drawer name={site.meta.name} groups={drawerGroups()} home="/" menu={site.menu} />
       <main className="wrap case" id="top">
-        <a className="back" href="/#work">All work</a>
+        <a className="back" href="/work">All work</a>
         <p className="kind">{w.kind}</p>
         <h1>{w.name}</h1>
         <p className="lead">{w.description}</p>

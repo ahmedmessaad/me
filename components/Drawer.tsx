@@ -91,6 +91,7 @@ export default function Drawer({ name, groups, home = "", menu }: { name: string
                   </div>
                 </div>
               )}
+              {k === "work" && <a href="/work" onClick={close}>All work</a>}
               {k === "work" && groups.map((gr, gi) => (
                 <button className="it" key={gr.name} onClick={() => push(`g:${gi}`)}>{gr.name}<span>&rsaquo;</span></button>
               ))}
