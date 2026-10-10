@@ -1,3 +1,4 @@
+```tsx
 import type { Metadata, Viewport } from "next";
 import { DM_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
 import { site } from "@/data/site";
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
   title: meta.title,
   description: meta.description,
   alternates: { canonical: "/" },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   openGraph: { title: meta.title, description: meta.description, url: meta.url, siteName: meta.name, type: "website" },
   twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
   verification: meta.googleVerification ? { google: meta.googleVerification } : undefined,
@@ -44,3 +50,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+```
