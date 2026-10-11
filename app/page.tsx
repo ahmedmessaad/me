@@ -15,11 +15,12 @@ export default function Home() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: meta.name, alternateName: ["Messaad", "Ahmed Messaad portfolio"], url: `${meta.url}/` }) }} />
       <Drawer name={meta.name} groups={groups} menu={site.menu} />
       <main id="top">
         <section className="hero wrap">
           <small>{hero.eyebrow}</small>
-          <h1>{hero.titleLines.map((l, i) => (<span className="ln" key={l}><span style={{ "--i": i } as CSSProperties}>{l}</span></span>))}</h1>
+          <h1>{hero.titleLines.map((l, i) => (<span className="ln" key={l}><span style={{ "--i": i } as CSSProperties}>{l}</span>{" "}</span>))}</h1>
           <div className="lede">
             <p>{hero.lead}</p>
             <a href={hero.primaryCta.href}>{hero.primaryCta.label}</a>

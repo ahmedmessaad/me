@@ -3,7 +3,7 @@ import type { SiteData } from "@/lib/types";
 export const site: SiteData = {
   "meta": {
     "name": "Ahmed Messaad",
-    "title": "Ahmed Messaad | Medical AI, Computer Vision & Deep Learning Engineer",
+    "title": "Ahmed Messaad | PhD Researcher, Medical AI & Computer Vision",
     "description": "Projects by Ahmed Messaad: brain tumor MRI classification, blood cell detection with YOLOv8 and U-Net, ICU treatment reinforcement learning, and full-stack ML products.",
     "url": "https://messaad.cc.cd",
     "email": "ahmed.messaad@outlook.com",

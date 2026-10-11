@@ -15,9 +15,8 @@ export const metadata: Metadata = {
   description: meta.description,
   alternates: { canonical: "/" },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: { title: meta.title, description: meta.description, url: meta.url, siteName: meta.name, type: "website" },
   twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
@@ -49,4 +48,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
