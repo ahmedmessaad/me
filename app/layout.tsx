@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     sameAs: site.footer.socials.filter((s) => s.type !== "email").map((s) => s.href),
   };
   return (
-    <html lang="en" className={${sellendra.variable} ${mono.variable}} suppressHydrationWarning>
+    <html lang="en" className={`${sellendra.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}" }} />
       </head>
