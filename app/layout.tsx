@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Instrument_Sans, Instrument_Serif } from "next/font/google";
+import { DM_Mono, Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import { site } from "@/data/site";
 import "./globals.css";
 
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--f-serif" });
-const sans = Instrument_Sans({ subsets: ["latin"], variable: "--f-sans" });
+const sans = localFont({ src: "./fonts/sellendra.ttf", variable: "--f-sans", display: "swap" });
 const mono = DM_Mono({ subsets: ["latin"], weight: "400", variable: "--f-mono" });
 
 const { meta } = site;
