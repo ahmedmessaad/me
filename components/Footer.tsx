@@ -1,8 +1,8 @@
-import type { CSSProperties } from "react";
 import type { SiteData } from "@/lib/types";
 import { SocialIcon } from "./Icons";
 import { external } from "./Emph";
 import ThemeToggle from "./ThemeToggle";
+import FitWordmark from "./FitWordmark";
 
 export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer">) {
   return (
@@ -34,9 +34,7 @@ export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer
           ))}
         </nav>
       </div>
-      <div className={`art${footer.cloudImage ? " has-photo" : ""}`} style={footer.cloudImage ? ({ "--cloud": `url(${footer.cloudImage})` } as CSSProperties) : undefined} aria-hidden="true">
-        <span className="word">{footer.wordmark}</span>
-      </div>
+      <FitWordmark word={footer.wordmark} cloud={footer.cloudImage || undefined} />
     </footer>
   );
 }
