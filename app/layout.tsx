@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono } from "next/font/google";
+import { DM_Mono, Newsreader, Hanken_Grotesk } from "next/font/google";
 import localFont from "next/font/local";
 import { site } from "@/data/site";
 import "./globals.css";
@@ -9,6 +9,8 @@ const sellendra = localFont({
   variable: "--f-sellendra",
   display: "swap",
 });
+const serif = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--f-serif", display: "swap" });
+const sans = Hanken_Grotesk({ subsets: ["latin"], variable: "--f-sans", display: "swap" });
 const mono = DM_Mono({ subsets: ["latin"], weight: "400", variable: "--f-mono" });
 
 const { meta } = site;
@@ -40,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     sameAs: site.footer.socials.filter((s) => s.type !== "email").map((s) => s.href),
   };
   return (
-    <html lang="en" className={`${sellendra.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${sellendra.variable} ${serif.variable} ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}" }} />
       </head>
