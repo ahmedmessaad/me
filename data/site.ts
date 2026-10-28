@@ -12,7 +12,8 @@ export const site: SiteData = {
   "hero": {
     "eyebrow": "PhD researcher and AI/ML engineer in medical imaging and computer vision",
     "titleLines": [
-      "I build the model.",
+      "I build the",
+      "model.",
       "Then I build",
       "the product."
     ],
