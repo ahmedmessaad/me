@@ -58,7 +58,7 @@ export default function Home() {
               </figure>
               <div className="about-body">
                 {about.paragraphs.map((t) => <p key={t}>{t}</p>)}
-                <p>The quickest way to reach me is <a href={`mailto:${meta.email}`} style={{ borderBottom: "1px solid" }}>{meta.email}</a>.</p>
+                <p>Email is the best way to reach me: <a href={`mailto:${meta.email}`} style={{ borderBottom: "1px solid" }}>{meta.email}</a></p>
                 <dl className="facts">
                   {about.facts.map((f) => (<div key={f.label}><dt>{f.label}</dt><dd>{f.value}</dd></div>))}
                 </dl>
