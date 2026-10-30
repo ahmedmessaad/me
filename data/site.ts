@@ -538,7 +538,7 @@ export const site: SiteData = {
         "value": "PhD (in progress), M.Sc. Embedded Systems"
       },
       {
-        "label": "Contract work",
+        "label": "Worked with",
         "value": "AIRM and Hemolab"
       }
     ],

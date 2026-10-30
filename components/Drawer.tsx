@@ -52,7 +52,7 @@ export default function Drawer({ name, groups, home = "", menu }: { name: string
   return (
     <>
       <header className="bar">
-        <a className="brand" href="/"><span className="mark">{name.charAt(0)}</span><b>{name}</b></a>
+        <a className="brand" href="/"><span className="mark"><span>{name.charAt(0)}</span></span><b>{name}</b></a>
         <button ref={pill} className="pill" onClick={() => setOpen(true)} aria-expanded={open}>Menu</button>
       </header>
       <div className={`scrim${open ? " on" : ""}`} onClick={close} />

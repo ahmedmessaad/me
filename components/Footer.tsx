@@ -10,7 +10,7 @@ export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer
       <div className="wrap ft">
         <div>
           <a className="brand" href="/">
-            <span className="mark">{meta.name.charAt(0)}</span>
+            <span className="mark"><span>{meta.name.charAt(0)}</span></span>
             {meta.name}
           </a>
           <p className="copy">Copyright {new Date().getFullYear()} {meta.name}. All rights reserved.</p>

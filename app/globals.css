@@ -231,3 +231,5 @@ html.vt-run::view-transition-old(root){z-index:1}
 .bar .brand{font-size:21px;gap:9px}.bar .brand b{font-weight:400}
 .pl-info{container-type:inline-size}
 .pl-info .nums strong{font-size:min(15cqw,112px);white-space:nowrap;line-height:1}
+
+.mark>span{display:block;transform:translateY(.17em)}
