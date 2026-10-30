@@ -10,67 +10,47 @@ export const site: SiteData = {
     "googleVerification": ""
   },
   "hero": {
-    "eyebrow": "PhD researcher and AI/ML engineer in medical imaging and computer vision",
+    "eyebrow": "",
     "titleLines": [
       "I build the",
       "model.",
       "Then I build",
       "the product."
     ],
-    "lead": "Brain tumor MRI classification, blood cell detection with YOLOv8, and ICU treatment agents trained with reinforcement learning. I build the models, then the products that put them in front of doctors.",
+    "lead": "I'm a PhD researcher in Algeria working on medical imaging. Here you'll find a brain MRI classifier, a blood cell detector that was shown on BBC News Arabic, an RL agent for ICU treatment timing, and the apps I've built around them.",
     "primaryCta": {
-      "label": "Explore research",
+      "label": "See the projects",
       "href": "#work"
     },
     "cv": {
       "label": "Download CV",
       "href": "/resume.pdf"
     },
-    "badges": [
-      {
-        "value": "99%",
-        "label": "Brain tumor accuracy"
-      },
-      {
-        "value": "BBC",
-        "label": "4Tech featured"
-      },
-      {
-        "value": "3",
-        "label": "Apps in production"
-      }
-    ],
-    "marquee": [
-      "Medical AI",
-      "Computer Vision",
-      "Reinforcement Learning",
-      "Full-Stack Products",
-      "DICOM Pipelines",
-      "Research to Deployment"
-    ]
+    "badges": [],
+    "marquee": []
   },
   "work": {
-    "label": "Research & engineering",
+    "label": "",
     "heading": "From research\nto real-world systems.",
-    "note": "Research becomes interesting when it survives contact with a real workflow. Reported metrics describe project evaluations, not clinical outcomes."
+    "note": "Research, a thesis, client work and a few experiments. Numbers come from project evaluations, not clinical use."
   },
   "featured": {
-    "label": "Featured · Medical computer vision · BBC 4Tech",
+    "label": "Medical computer vision · BBC 4Tech",
     "title": "HemaVision",
-    "description": "Automated hematology platform replacing manual microscopy for routine blood analysis. YOLOv8 detection, U-Net segmentation, and a disease layer flagging cell morphology tied to leukemia, malaria, and anemia. Validated by a clinical hematologist before being featured on BBC News Arabic's 4Tech program.",
+    "description": "Blood smear analysis that replaces manual cell counting. YOLOv8 finds the cells, a U-Net separates the ones that overlap, and a last layer labels RBC and WBC subtypes and flags shapes linked to leukemia, malaria and anemia. A clinical hematologist checked it, and it was shown on BBC News Arabic's 4Tech.",
     "chips": [
       "YOLOv8",
       "U-Net",
       "OpenCV",
       "PyTorch",
       "97% accuracy",
-      "45 min → 3 min"
+      "45 min to 3 min"
     ],
     "link": {
       "label": "Watch BBC coverage",
       "href": "https://www.youtube.com/watch?v=fX77vZlHkng"
     },
-    "pipelineCaption": "From smear image to clinical output",
+    "pipelineCaption": "Smear image in, cell labels out",
     "steps": [
       {
         "kind": "INPUT",
@@ -95,11 +75,11 @@ export const site: SiteData = {
     "stats": [
       {
         "value": "97%",
-        "label": "Detection accuracy"
+        "label": "detection accuracy"
       },
       {
         "value": "3 min",
-        "label": "Down from 45 min per smear"
+        "label": "per smear, down from 45"
       }
     ],
     "slug": "hemavision",
@@ -117,21 +97,21 @@ export const site: SiteData = {
       },
       {
         "label": "Workflow",
-        "value": "45 min → 3 min diagnostic time"
+        "value": "45 min to 3 min diagnostic time"
       },
       {
         "label": "Validation",
         "value": "Clinical hematologist"
       }
     ],
-    "insight": "45 minutes → 3 minutes. The interesting result was not only the accuracy — it was the reduction of friction around the diagnosis."
+    "insight": ""
   },
   "projects": [
     {
       "group": "Clinical AI",
       "kind": "Medical computer vision",
-      "name": "AIRM — Brain MRI Classification",
-      "description": "EfficientNet-B7 reaching 99% across four tumor categories with a full DICOM pipeline and a radiologist-validated PyQt5 interface built for real clinical workflow integration.",
+      "name": "AIRM: Brain MRI Classification",
+      "description": "Sorts brain MRI scans into four tumor categories with EfficientNet-B7, 99% accurate in evaluation. It reads DICOM files directly, and a radiologist reviewed the PyQt5 desktop app.",
       "resultLabel": "Result",
       "result": "99% four-class accuracy. DICOM pipeline tested with hospital MRI scanners.",
       "stack": [
@@ -173,13 +153,13 @@ export const site: SiteData = {
           "value": "PyQt5 clinical application"
         }
       ],
-      "insight": "99% accuracy isn't the product. A model becomes useful when it can survive the path from image to decision."
+      "insight": ""
     },
     {
       "group": "Clinical AI",
       "kind": "Reinforcement learning · Healthcare",
       "name": "Medical Treatment DRL",
-      "description": "ICU treatment timing agent on MIMIC-III. A2C reached 99.5% clinical appropriateness with +76–145 reward improvement. Rule-based safety filter lifted PPO/DQN appropriateness by 40 points.",
+      "description": "An agent that decides when to treat ICU patients, trained on MIMIC-III. A2C reached 99.5% clinical appropriateness. A rule-based safety filter raised PPO and DQN by 40 points. A research simulation, not a clinical tool.",
       "resultLabel": "Result",
       "result": "99.5% appropriateness. 26-dimensional Gym environment modeling temporal lab trends.",
       "stack": [
@@ -197,7 +177,7 @@ export const site: SiteData = {
       "writeup": [
         "This project trains reinforcement learning agents to decide treatment timing for ICU patients using the MIMIC-III dataset, in a 26-dimensional Gym environment that models temporal lab trends.",
         "A2C reached 99.5% clinical appropriateness with a reward improvement of +76 to +145. PPO and DQN scored lower until a rule-based safety filter lifted their appropriateness by 40 points.",
-        "The takeaway is that the safety layer mattered as much as the algorithm. This is a research simulation, not a clinical tool."
+        "The safety layer mattered as much as the algorithm. This is a research simulation, not a clinical tool."
       ],
       "image": "/work/drl-a2c-analysis.jpg",
       "imageAlt": "A2C reward distribution and abnormal lab counts over an episode",
@@ -225,13 +205,13 @@ export const site: SiteData = {
           "value": "Custom filter + 26-D Gym environment"
         }
       ],
-      "insight": "A 99.5% appropriateness score is only meaningful when the environment, safety filter and evaluation assumptions are visible."
+      "insight": ""
     },
     {
       "group": "Models to products",
       "kind": "Full-stack product",
       "name": "SpecMob",
-      "description": "Phone comparison and discovery platform. Next.js + FastAPI + async Postgres, trigram typo-tolerant search, tiered caching. Product copy generated by Gemini with a deterministic fallback — AI layer never blocks rendering.",
+      "description": "A phone comparison site on Next.js, FastAPI and async Postgres, with typo-tolerant search and tiered caching. Product descriptions come from Gemini, with a plain fallback so pages still render if the AI call fails.",
       "resultLabel": "Live product",
       "result": "Full-stack from nothing to production: frontend, API, database, AI copy layer.",
       "stack": [
@@ -273,15 +253,15 @@ export const site: SiteData = {
           "value": "Typo-tolerant search + Gemini copy layer"
         }
       ],
-      "insight": "The model is not the destination. The useful thing is the system around it."
+      "insight": ""
     },
     {
       "group": "Models to products",
       "kind": "Applied ML · Research thesis",
       "name": "My Daily Health",
-      "description": "Multi-disease diagnostic platform across five domains. Systematic evaluation of 12 architectures with stratified cross-validation. Secure clinical workflow, sub-200ms inference. ICSTEM 2023 Outstanding Presentation Award.",
+      "description": "My M.Sc. thesis: a diagnosis platform for five disease areas that compares 12 architectures with stratified cross-validation and answers in under 200 ms. Presented at ICSTEM 2023, where it won Best Presentation.",
       "resultLabel": "Result",
-      "result": "90–99% accuracy across five disease domains on M.Sc. thesis evaluation.",
+      "result": "90 to 99% accuracy across five disease domains on M.Sc. thesis evaluation.",
       "stack": [
         "TensorFlow",
         "PyTorch",
@@ -323,10 +303,10 @@ export const site: SiteData = {
         },
         {
           "label": "Reported accuracy",
-          "value": "90–99%"
+          "value": "90 to 99%"
         }
       ],
-      "insight": "Research becomes more interesting when it has to become a product.",
+      "insight": "",
       "imageCaption": "Illustrative CNN architecture."
     },
     {
@@ -341,7 +321,7 @@ export const site: SiteData = {
       "group": "Models to products",
       "kind": "Machine learning · Explainability",
       "name": "Healthcare Cost Prediction",
-      "description": "A cost-prediction model designed to explain its own decisions: Conv1D, 47 engineered features and SHAP analysis.",
+      "description": "A Conv1D model that predicts insurance costs (R² 0.88) from 47 engineered features, with SHAP to show what drives each estimate.",
       "resultLabel": "Result",
       "result": "R² 0.88 with SHAP-based explanations.",
       "stack": [
@@ -376,7 +356,7 @@ export const site: SiteData = {
           "value": "47 engineered features + SHAP"
         }
       ],
-      "insight": "R² 0.88 — but the explanation around a prediction matters almost as much as the prediction itself."
+      "insight": ""
     },
     {
       "slug": "deep-rl-crypto-trading",
@@ -384,13 +364,13 @@ export const site: SiteData = {
       "seoDescription": "A reinforcement learning trading experiment where PPO and A2C failed to beat a simple moving-average baseline in a noisy market, with the negative result kept.",
       "writeup": [
         "This experiment compared deep reinforcement learning agents, PPO and A2C, against a simple SMA (simple moving average) baseline for crypto trading.",
-        "In a noisy, non-stationary market, the more complex models did not beat the baseline. Greater model complexity did not guarantee a better strategy.",
-        "The negative result is kept in the repository on purpose: evidence over vanity metrics."
+        "In a noisy, non-stationary market, the more complex models did not beat the baseline.",
+        "I left the negative result in the repository."
       ],
       "group": "Experiments",
       "kind": "Deep RL · Experiment",
       "name": "Deep RL for Crypto Trading",
-      "description": "An honest experiment where PPO and A2C did not beat a simple SMA strategy.",
+      "description": "PPO and A2C trading agents against a simple moving-average baseline. They lost, and I kept the result in the repo.",
       "resultLabel": "Finding",
       "result": "PPO and A2C did not beat the SMA baseline; the negative result is kept.",
       "stack": [
@@ -424,7 +404,7 @@ export const site: SiteData = {
           "value": "RL limits in noisy markets"
         }
       ],
-      "insight": "The model lost. The experiment didn't."
+      "insight": ""
     },
     {
       "slug": "day-tracker",
@@ -437,7 +417,7 @@ export const site: SiteData = {
       "group": "Models to products",
       "kind": "Software · Systems",
       "name": "Day Tracker",
-      "description": "A personal productivity system for tasks, budgets, streaks, reminders and notes.",
+      "description": "A personal app for tasks, budgets, streaks, reminders and notes, with Postgres storage and web push.",
       "resultLabel": "Result",
       "result": "Tasks, budgets, streaks, reminders and notes in one app built for daily use.",
       "stack": [
@@ -466,7 +446,7 @@ export const site: SiteData = {
           "value": "Web push reminders"
         }
       ],
-      "insight": "Small systems become valuable when they remove small amounts of friction every day."
+      "insight": ""
     },
     {
       "slug": "git-backed-cms",
@@ -480,7 +460,7 @@ export const site: SiteData = {
       "group": "Models to products",
       "kind": "Software · Systems",
       "name": "Git-Backed CMS",
-      "description": "A client portfolio whose admin panel commits straight back to the repo, with no database involved.",
+      "description": "A portfolio for a client, Zaid Saad, whose admin panel commits edits straight to GitHub, so there is no database.",
       "resultLabel": "Result",
       "result": "No database: every edit is a git commit.",
       "stack": [
@@ -502,30 +482,30 @@ export const site: SiteData = {
       "facts": [
         {
           "label": "Client",
-          "value": "Zaid Saad — Flutter / Firebase developer"
+          "value": "Zaid Saad, Flutter / Firebase developer"
         },
         {
           "label": "Storage",
-          "value": "None — git is the database"
+          "value": "None; git is the database"
         },
         {
           "label": "Write path",
           "value": "GitHub Contents API"
         }
       ],
-      "insight": "The portfolio is not only the interface. It is also a system for maintaining the interface."
+      "insight": ""
     }
   ],
   "more": [],
   "publications": {
-    "label": "Publications",
-    "heading": "Research, in\nthe literature.",
-    "note": "Conference research and scientific contributions.",
+    "label": "",
+    "heading": "Publication",
+    "note": "",
     "items": [
       {
         "status": "Conference presentation · December 2023",
         "title": "Helping System for Brain Disease Diagnosis Using Deep Learning",
-        "description": "Presented at the International Conference on Science, Technology, Engineering and Management (ICSTEM), Istanbul, Turkey, 3–7 December 2023.",
+        "description": "Presented at the International Conference on Science, Technology, Engineering and Management (ICSTEM), Istanbul, Turkey, 3 to 7 December 2023.",
         "tags": [
           "Transfer Learning",
           "Deep Learning",
@@ -541,47 +521,39 @@ export const site: SiteData = {
     ]
   },
   "about": {
-    "label": "About",
-    "statement": "Research makes me careful about what a model *actually knows*. Systems work makes me care about latency, failure modes, and what happens when the happy path breaks.",
+    "label": "",
+    "statement": "",
     "paragraphs": [
-      "I am a PhD researcher and AI/ML engineer working across applied deep learning, clinical and diagnostic applications, and the engineering needed to turn research into usable systems. Research and implementation inform each other.",
-      "My project work includes brain tumor classification, automated blood cell detection, and ICU treatment-timing agents. I care about the assumptions behind a result, how it is evaluated, and what it takes to make a system useful beyond an experiment.",
-      "On the systems side: Next.js and React on the frontend, FastAPI or Flask on the backend, Postgres for storage. I've taken a full product from nothing to production and keep several Postgres-backed apps running."
+      "I'm a PhD researcher in Algeria working on medical imaging and computer vision. My M.Sc. was in embedded systems, and the thesis work from it was presented at ICSTEM 2023 in Istanbul.",
+      "Most of what's on this site is medical: brain tumor classification, blood cell detection, ICU treatment timing. I spend a lot of time on how a result was measured, since an accuracy figure alone says little. One of the experiments here is a negative result I kept.",
+      "For software I use Next.js, FastAPI or Flask, and Postgres. I took SpecMob from nothing to production and I run several other Postgres-backed apps."
     ],
     "facts": [
-      {
-        "label": "Core focus",
-        "value": "Medical AI · Applied systems"
-      },
-      {
-        "label": "Technical range",
-        "value": "CV · DL · RL · Web"
-      },
-      {
-        "label": "Academic path",
-        "value": "PhD Researcher · M.Sc. Embedded Systems"
-      },
       {
         "label": "Based in",
         "value": "Algeria"
       },
       {
-        "label": "Industry",
-        "value": "AIRM and Hemolab contracts, shipped software systems"
+        "label": "Education",
+        "value": "PhD (in progress), M.Sc. Embedded Systems"
+      },
+      {
+        "label": "Contract work",
+        "value": "AIRM and Hemolab"
       }
     ],
     "photo": "/ahmed.jpg",
     "photoAlt": "Portrait of Ahmed Messaad"
   },
   "footer": {
-    "blurb": "PhD researcher and AI/ML engineer working across medical AI, deep learning, and the systems that turn research into useful products.",
+    "blurb": "",
     "wordmark": "messaad",
     "columns": [
       {
-        "title": "Research",
+        "title": "Site",
         "links": [
           {
-            "label": "Selected work",
+            "label": "Projects",
             "href": "/work"
           },
           {
@@ -642,9 +614,9 @@ export const site: SiteData = {
   },
   "menu": {
     "card": {
-      "label": "Featured",
+      "label": "Latest",
       "title": "HemaVision",
-      "text": "Blood analysis from 45 to 3 minutes. Featured on BBC 4Tech.",
+      "text": "Blood smear analysis, 45 minutes down to 3. Shown on BBC 4Tech.",
       "href": "/work/hemavision",
       "image": "/work/hemavision-thumb.jpg"
     },

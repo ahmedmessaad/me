@@ -5,7 +5,7 @@ import Drawer from "@/components/Drawer";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Selected work: medical AI, computer vision and reinforcement learning projects",
+  title: "Projects: medical AI, computer vision and reinforcement learning projects",
   description: "Projects by Ahmed Messaad: blood cell detection, brain tumor MRI classification, ICU treatment reinforcement learning, healthcare cost prediction and full-stack ML products.",
   alternates: { canonical: "/work" },
 };
@@ -18,17 +18,15 @@ export default function WorkIndex() {
       <Drawer name={site.meta.name} groups={drawerGroups()} home="/" menu={site.menu} />
       <main className="wrap case idx" id="top">
         <a className="back" href="/">Home</a>
-        <p className="kind">{site.work.label}</p>
-        <h1>Selected work</h1>
+        <h1>Projects</h1>
         <p className="lead">{site.work.note}</p>
         {groups.map((g) => (
           <section key={g}>
             <h2 className="grp">{g}</h2>
             {list.filter((w) => w.group === g).map((w) => (
               <a className="row" key={w.slug} href={`/work/${w.slug}`}>
-                <i>{String(list.indexOf(w) + 1).padStart(2, "0")}</i>
                 <h3>{w.name}</h3>
-                <em>{w.stats[0]?.value ?? "Code"}</em>
+                <em>{w.kind.split(" · ")[0]}</em>
                 <p>{w.description}</p>
               </a>
             ))}

@@ -26,6 +26,6 @@ export function drawerGroups() {
   const names = [...new Set(allWork().map((w) => w.group))];
   return names.map((name) => ({
     name,
-    items: allWork().filter((w) => w.group === name).map((w) => ({ name: w.name.split(" — ")[0], href: `/work/${w.slug}` })),
+    items: allWork().filter((w) => w.group === name).map((w) => ({ name: w.name.split(":")[0], href: `/work/${w.slug}` })),
   }));
 }
