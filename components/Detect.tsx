@@ -164,7 +164,7 @@ export default function Detect() {
       const t = clamp((now - t0) / D);
       drawGrid(t);
       if (t < 1) raf.current = requestAnimationFrame(step);
-      else setStatus(`${total} cells · ${wbc} WBC · ${total - wbc} RBC`);
+      else setStatus(`${total} cells: ${wbc} WBC, ${total - wbc} RBC`);
     };
     raf.current = requestAnimationFrame(step);
   };

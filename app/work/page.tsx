@@ -26,7 +26,7 @@ export default function WorkIndex() {
             {list.filter((w) => w.group === g).map((w) => (
               <a className="row" key={w.slug} href={`/work/${w.slug}`}>
                 <h3>{w.name}</h3>
-                <em>{w.kind.split(" · ")[0]}</em>
+                <em>{w.kind.split(", ")[0]}</em>
                 <p>{w.description}</p>
               </a>
             ))}

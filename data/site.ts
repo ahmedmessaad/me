@@ -35,7 +35,7 @@ export const site: SiteData = {
     "note": "Some of these are research, some are client work, and a few are just experiments. The numbers come from my own evaluations, not from clinical use."
   },
   "featured": {
-    "label": "Medical computer vision · BBC 4Tech",
+    "label": "Medical computer vision, BBC 4Tech",
     "title": "HemaVision",
     "description": "HemaVision counts and classifies blood cells from a smear image, so nobody has to do it by hand under a microscope. YOLOv8 finds the cells, a U-Net separates the ones touching each other, then it labels RBC and WBC types and flags shapes linked to leukemia, malaria and anemia. A hematologist validated it and BBC News Arabic showed it on 4Tech.",
     "chips": [
@@ -157,7 +157,7 @@ export const site: SiteData = {
     },
     {
       "group": "Clinical AI",
-      "kind": "Reinforcement learning · Healthcare",
+      "kind": "Reinforcement learning, Healthcare",
       "name": "Medical Treatment DRL",
       "description": "An agent that learns when to treat ICU patients, trained on MIMIC-III. A2C got 99.5% clinical appropriateness. PPO and DQN did worse until I added a rule-based safety filter, which gave them 40 more points. It's a simulation, not a clinical tool.",
       "resultLabel": "Result",
@@ -257,7 +257,7 @@ export const site: SiteData = {
     },
     {
       "group": "Models to products",
-      "kind": "Applied ML · Research thesis",
+      "kind": "Applied ML, Research thesis",
       "name": "My Daily Health",
       "description": "My M.Sc. thesis. A diagnosis platform for five disease areas where I compared 12 architectures with stratified cross-validation, with inference under 200 ms. I presented it at ICSTEM 2023 and won Best Presentation.",
       "resultLabel": "Result",
@@ -319,7 +319,7 @@ export const site: SiteData = {
         "I also ran an ablation study on which temporal convolution strategies work best for this kind of healthcare prediction."
       ],
       "group": "Models to products",
-      "kind": "Machine learning · Explainability",
+      "kind": "Machine learning, Explainability",
       "name": "Healthcare Cost Prediction",
       "description": "Predicts insurance costs with a Conv1D model, R² 0.88, using 47 engineered features. I used SHAP to see what drives each prediction.",
       "resultLabel": "Result",
@@ -368,7 +368,7 @@ export const site: SiteData = {
         "I left the negative result in the repository."
       ],
       "group": "Experiments",
-      "kind": "Deep RL · Experiment",
+      "kind": "Deep RL, Experiment",
       "name": "Deep RL for Crypto Trading",
       "description": "I tried PPO and A2C for crypto trading and compared them with a simple moving average. The moving average won. I left the result in the repo.",
       "resultLabel": "Finding",
@@ -415,7 +415,7 @@ export const site: SiteData = {
         "Data is in PostgreSQL and reminders go out with web push. I built it around a daily routine, not around an algorithm."
       ],
       "group": "Models to products",
-      "kind": "Software · Systems",
+      "kind": "Software, Systems",
       "name": "Day Tracker",
       "description": "A personal app for tasks, budgets, streaks, reminders and notes. Postgres for storage, web push for the reminders.",
       "resultLabel": "Result",
@@ -458,7 +458,7 @@ export const site: SiteData = {
         "The admin on this site works the same way."
       ],
       "group": "Models to products",
-      "kind": "Software · Systems",
+      "kind": "Software, Systems",
       "name": "Git-Backed CMS",
       "description": "A portfolio I built for a client, Zaid Saad. The admin panel saves edits as commits straight to GitHub, so there is no database.",
       "resultLabel": "Result",
@@ -503,7 +503,7 @@ export const site: SiteData = {
     "note": "",
     "items": [
       {
-        "status": "Conference presentation · December 2023",
+        "status": "Conference presentation, December 2023",
         "title": "Helping System for Brain Disease Diagnosis Using Deep Learning",
         "description": "I presented this at ICSTEM (International Conference on Science, Technology, Engineering and Management) in Istanbul, 3 to 7 December 2023.",
         "tags": [

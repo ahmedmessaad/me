@@ -74,7 +74,7 @@ export default function Drawer({ name, groups, home = "", menu }: { name: string
               <h5>{titleOf(k)}</h5>
               {k === "menu" && (
                 <>
-                  <button className="it" onClick={() => push("work")}>Work<span>&rsaquo;</span></button>
+                  <button className="it" onClick={() => push("work")}>Work<span aria-hidden="true"><svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M1.5 1.5 6.5 6.5l-5 5" /></svg></span></button>
                   <a href={`${home}#publications`} onClick={close}>Publications</a>
                   <a href={`${home}#about`} onClick={close}>About</a>
                   <a href="#contact" onClick={close}>Contact</a>
@@ -91,9 +91,9 @@ export default function Drawer({ name, groups, home = "", menu }: { name: string
                   </div>
                 </div>
               )}
-              {k === "work" && <a href="/work" onClick={close}>All work</a>}
+              {k === "work" && <a href="/work" onClick={close}>All projects</a>}
               {k === "work" && groups.map((gr, gi) => (
-                <button className="it" key={gr.name} onClick={() => push(`g:${gi}`)}>{gr.name}<span>&rsaquo;</span></button>
+                <button className="it" key={gr.name} onClick={() => push(`g:${gi}`)}>{gr.name}<span aria-hidden="true"><svg width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M1.5 1.5 6.5 6.5l-5 5" /></svg></span></button>
               ))}
               {g && g.items.map((p) => <a key={p.name} href={p.href} onClick={close}>{p.name}</a>)}
             </section>

@@ -9,7 +9,7 @@ import { drawerGroups } from "@/lib/work";
 export default function Home() {
   const { meta, hero, work, featured, projects, more, publications, about, footer } = site;
   const groups = drawerGroups();
-  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.kind.split(" · ")[0], href: `/work/${p.slug}` })),
+  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.kind.split(", ")[0], href: `/work/${p.slug}` })),
     ...more.map((m) => ({ name: m.name, text: m.kind, tag: m.link.label, href: m.link.href }))];
 
   return (
@@ -27,7 +27,7 @@ export default function Home() {
 
           <div className="plate" id="work">
             <div className="pl-media">
-            <div className="cap"><b>{featured.title}</b><span>{featured.label.split(" · ").pop()}</span></div>
+            <div className="cap"><b>{featured.title}</b><span>{featured.label.split(", ").pop()}</span></div>
             <Detect />
             <div className="cap"><span>{featured.pipelineCaption}. Simulated here; tap to run.</span></div>
             </div>

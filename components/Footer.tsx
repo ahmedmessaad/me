@@ -13,7 +13,7 @@ export default function Footer({ meta, footer }: Pick<SiteData, "meta" | "footer
             <span className="mark"><span>{meta.name.charAt(0)}</span></span>
             {meta.name}
           </a>
-          <p className="copy">Copyright {new Date().getFullYear()} {meta.name}. All rights reserved.</p>
+          <p className="copy">&copy; {new Date().getFullYear()} {meta.name}</p>
           <div className="soc">
             {footer.socials.map((s) => (
               <a key={s.href} href={s.href} aria-label={s.label} {...external(s.href)}>
