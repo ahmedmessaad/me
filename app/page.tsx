@@ -9,12 +9,15 @@ import { drawerGroups } from "@/lib/work";
 export default function Home() {
   const { meta, hero, work, featured, projects, more, publications, about, footer } = site;
   const groups = drawerGroups();
-  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.kind.split(", ")[0], href: `/work/${p.slug}` })),
+  const all = [...projects.map((p) => ({ name: p.name, text: p.description, tag: p.stack.slice(0, 2).join(", "), href: `/work/${p.slug}` })),
     ...more.map((m) => ({ name: m.name, text: m.kind, tag: m.link.label, href: m.link.href }))];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: meta.name, alternateName: ["Messaad", "Ahmed Messaad portfolio"], url: `${meta.url}/` }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [
+        { "@type": "WebSite", name: meta.name, alternateName: ["Messaad", "Ahmed Messaad portfolio"], url: meta.url, inLanguage: "en" },
+        ...publications.items.map((p) => ({ "@type": "ScholarlyArticle", headline: p.title, url: `${meta.url}${p.link.href}`, keywords: p.tags.join(", "), inLanguage: "en", author: { "@type": "Person", name: meta.name, url: meta.url } })),
+      ] }) }} />
       <Drawer name={meta.name} groups={groups} menu={site.menu} />
       <main id="top">
         <section className="hero wrap">
@@ -51,6 +54,7 @@ export default function Home() {
           </div>
 
           <div className="about" id="about">
+            <h2 className="sr">About</h2>
             {about.statement && <p><Emph text={about.statement} /></p>}
             <div className="about-grid">
               <figure className="portrait">

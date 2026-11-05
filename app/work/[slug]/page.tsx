@@ -5,6 +5,7 @@ import { allWork, drawerGroups } from "@/lib/work";
 import Drawer from "@/components/Drawer";
 import Footer from "@/components/Footer";
 import Detect from "@/components/Detect";
+import LivePreview from "@/components/LivePreview";
 import { external } from "@/components/Emph";
 
 export const dynamicParams = false;
@@ -20,7 +21,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: w.seoTitle,
     description: w.seoDescription,
     alternates: { canonical: `/work/${w.slug}` },
-    openGraph: { title: w.seoTitle, description: w.seoDescription, url: `/work/${w.slug}`, type: "article", images: w.image ? [{ url: w.image }] : undefined },
+    openGraph: { title: w.seoTitle, description: w.seoDescription, url: `/work/${w.slug}`, type: "article", images: [{ url: w.image || "/og.png", alt: w.imageAlt || w.name }] },
+    twitter: { card: "summary_large_image", title: w.seoTitle, description: w.seoDescription, images: [w.image || "/og.png"] },
   };
 }
 
@@ -34,12 +36,24 @@ export default async function Case({ params }: Props) {
   const ld = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: w.seoTitle,
+    name: w.name,
+    headline: w.seoTitle,
+    inLanguage: "en",
+    isPartOf: { "@type": "WebSite", name: site.meta.name, url: site.meta.url },
     description: w.seoDescription,
     keywords: w.stack.join(", "),
     url: `${site.meta.url}/work/${w.slug}`,
-    ...(w.image ? { image: `${site.meta.url}${w.image}` } : {}),
+    image: `${site.meta.url}${w.image || "/og.png"}`,
     author: { "@type": "Person", name: site.meta.name, url: site.meta.url },
+  };
+  const crumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.meta.url },
+      { "@type": "ListItem", position: 2, name: "Projects", item: `${site.meta.url}/work` },
+      { "@type": "ListItem", position: 3, name: w.name, item: `${site.meta.url}/work/${w.slug}` },
+    ],
   };
   return (
     <>
@@ -49,6 +63,7 @@ export default async function Case({ params }: Props) {
         <h1>{w.name}</h1>
         <p className="lead">{w.description}</p>
         {w.slug === site.featured.slug && <div className="figure"><Detect /></div>}
+        {w.slug === "specmob" && <LivePreview url={w.link.href} alt={w.imageAlt} caption={w.imageCaption} />}
         {w.image && (<figure className="figure"><img src={w.image} alt={w.imageAlt} fetchPriority="high" />{w.imageCaption && <figcaption>{w.imageCaption}</figcaption>}</figure>)}
         <div className="body">{w.writeup.map((p) => <p key={p}>{p}</p>)}</div>
         <div className="chips">{w.stack.map((c) => <span key={c}>{c}</span>)}</div>
@@ -57,6 +72,7 @@ export default async function Case({ params }: Props) {
       </main>
       <Footer meta={site.meta} footer={site.footer} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
     </>
   );
 }

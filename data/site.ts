@@ -4,7 +4,7 @@ export const site: SiteData = {
   "meta": {
     "name": "Ahmed Messaad",
     "title": "Ahmed Messaad | PhD Researcher, Medical AI & Computer Vision",
-    "description": "Projects by Ahmed Messaad: brain tumor MRI classification, blood cell detection with YOLOv8 and U-Net, ICU treatment reinforcement learning, and full-stack ML products.",
+    "description": "Ahmed Messaad, PhD researcher in Algeria. Brain tumor MRI classification, blood cell detection with YOLOv8, ICU treatment reinforcement learning and full-stack ML products.",
     "url": "https://messaad.cc.cd",
     "email": "ahmed.messaad@outlook.com",
     "googleVerification": ""
@@ -12,12 +12,11 @@ export const site: SiteData = {
   "hero": {
     "eyebrow": "",
     "titleLines": [
-      "I build the",
-      "model.",
-      "Then I build",
-      "the product."
+      "Medical AI,",
+      "from model",
+      "to product."
     ],
-    "lead": "I'm Ahmed, a PhD researcher in Algeria working on medical imaging. This is where I keep my projects: a brain tumor classifier, a blood cell detector that BBC News Arabic showed on 4Tech, an RL agent for ICU treatment timing, and a few apps I built.",
+    "lead": "I'm Ahmed Messaad, a PhD researcher in medical imaging and computer vision.",
     "primaryCta": {
       "label": "See the projects",
       "href": "#work"
@@ -222,7 +221,7 @@ export const site: SiteData = {
       ],
       "link": {
         "label": "Visit site",
-        "href": "https://specmob.vercel.app"
+        "href": "https://specmob.com"
       },
       "slug": "specmob",
       "seoTitle": "SpecMob: phone comparison platform built with Next.js and FastAPI",
@@ -232,7 +231,8 @@ export const site: SiteData = {
         "Search uses PostgreSQL trigram matching, so a typo still finds the right phone, and tiered caching keeps it fast. Gemini writes the product descriptions, with a deterministic fallback so the AI never blocks a page from rendering."
       ],
       "image": "",
-      "imageAlt": "",
+      "imageCaption": "specmob.com, live screenshot",
+      "imageAlt": "Screenshot of the SpecMob phone comparison site",
       "stats": [
         {
           "value": "Live",

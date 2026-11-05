@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
-  openGraph: { title: meta.title, description: meta.description, url: meta.url, siteName: meta.name, type: "website" },
-  twitter: { card: "summary_large_image", title: meta.title, description: meta.description },
+  openGraph: { title: meta.title, description: meta.description, url: meta.url, siteName: meta.name, type: "website", locale: "en_US", images: [{ url: "/og.png", width: 1200, height: 630, alt: "Ahmed Messaad, medical AI from model to product" }] },
+  twitter: { card: "summary_large_image", title: meta.title, description: meta.description, images: ["/og.png"] },
   verification: meta.googleVerification ? { google: meta.googleVerification } : undefined,
 };
 
@@ -38,6 +38,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: meta.url,
     email: meta.email,
     jobTitle: "PhD Researcher and AI/ML Engineer",
+    description: meta.description,
+    image: `${meta.url}/ahmed.jpg`,
+    address: { "@type": "PostalAddress", addressCountry: "DZ" },
+    knowsAbout: ["Medical imaging", "Computer vision", "Deep learning", "Reinforcement learning"],
     sameAs: site.footer.socials.filter((s) => s.type !== "email").map((s) => s.href),
   };
   return (

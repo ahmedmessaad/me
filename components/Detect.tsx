@@ -85,13 +85,13 @@ export default function Detect() {
       const col = k.type === "WBC" ? "#ffd84a" : "#2c54c8";
       c.strokeStyle = col; c.strokeRect(k.x - k.r, k.y - k.r, k.r * 2, k.r * 2);
       c.fillStyle = col; c.fillRect(k.x - k.r, k.y - k.r - 17, 62, 17);
-      c.fillStyle = k.type === "WBC" ? "#131311" : "#fff";
+      c.fillStyle = k.type === "WBC" ? "#131311" : "#f4efe4";
       c.fillText(`${k.type} ${k.conf.toFixed(2)}`, k.x - k.r + 4, k.y - k.r - 4);
     });
     if (n < cells.current.length) {
       const x = (n / cells.current.length) * W;
       const gr = c.createLinearGradient(x - 70, 0, x, 0);
-      gr.addColorStop(0, "rgba(255,255,255,0)"); gr.addColorStop(1, "rgba(255,255,255,.42)");
+      gr.addColorStop(0, "rgba(244,239,228,0)"); gr.addColorStop(1, "rgba(244,239,228,.42)");
       c.fillStyle = gr; c.fillRect(x - 70, 0, 70, H);
     }
     setStatus(n >= cells.current.length ? `${cells.current.length} cells found in 0.04 s` : "detecting...");
@@ -143,7 +143,7 @@ export default function Detect() {
         c.globalAlpha = a;
         c.lineWidth = 2.5; c.strokeStyle = col; c.strokeRect(dx, dy, s, s);
         c.fillStyle = col; c.fillRect(dx, dy - 17, 62, 17);
-        c.fillStyle = k.type === "WBC" ? "#131311" : "#fff"; c.font = "600 13px monospace";
+        c.fillStyle = k.type === "WBC" ? "#131311" : "#f4efe4"; c.font = "600 13px monospace";
         c.fillText(`${k.type} ${k.conf.toFixed(2)}`, dx + 4, dy - 4);
         c.globalAlpha = 1;
       }
